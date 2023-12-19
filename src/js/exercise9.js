@@ -2,8 +2,11 @@
 convertirArregloACadena(arreglo, separador)
 
 */
+
+const {Join} = require('./utils');
+
 function convertirArregloACadena(arreglo, separador) {
-    return arreglo.join(separador);
+    return Join(arreglo ,separador);
 }
 
 // Ejemplo de uso

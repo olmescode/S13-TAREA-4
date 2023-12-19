@@ -2,19 +2,32 @@
 eliminarElementoDeArreglo(arreglo, elemento)
 
 */
+
+const {IndexOfArray, Splice} = require('./utils');
+
 function eliminarElementoDeArreglo(arreglo, elemento) {
-    let indice = arreglo.indexOf(elemento);
+    let indice = IndexOfArray(arreglo,elemento);
+
 
     if (indice !== -1) {
-        arreglo.splice(indice, 1);
-        return "Elemento " + elemento + " eliminado del arreglo.";
+        Splice(arreglo, indice, 1);
+        console.log("Elemento " + elemento + " eliminado del arreglo.");
+        return true;
     } else {
-        return "El elemento " + elemento + " no se encuentra en el arreglo.";
+        console.log( "El elemento " + elemento + " no se encuentra en el arreglo.");
+        return false;
     }
 }
 
 // Ejemplo de uso
 let arregloEliminar = [10, 20, 30, 40, 50];
-let elementoAEliminar = 30;
+let elementoAEliminar = 40;
 let resultadoEliminacionArreglo = eliminarElementoDeArreglo(arregloEliminar, elementoAEliminar);
-console.log(resultadoEliminacionArreglo);
+
+if (resultadoEliminacionArreglo===true) {
+    arregloEliminar.forEach(element => {
+        console.log(element);
+    });
+}
+
+

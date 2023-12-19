@@ -16,5 +16,5 @@ function encontrarDivisores(numero) {
 }
 
 // Ejemplo de uso
-let divisorsResult = encontrarDivisores(24);
+let divisorsResult = encontrarDivisores(6);
 console.log(divisorsResult);
