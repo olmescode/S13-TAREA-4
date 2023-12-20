@@ -2,8 +2,11 @@
 convertirCadenaAArreglo(cadena)
 
 */
+
+const {Split} = require('./utils');
+
 function convertirCadenaAArreglo(cadena) {
-    return cadena.split('');
+    return Split (cadena, '');
 }
 
 // Ejemplo de uso

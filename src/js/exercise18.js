@@ -1,12 +1,19 @@
 /*
 base2ABase10(numeroBinario)
 Función que convierta un número binario a base 10
+Ejemplo : Número binario 101101 en base 10: 45
+          Número binario 1101   en base 10: 13
+        Número binario 11011   en base 10: 27
 */
+
+const Bases = require('./bases');
+const {ParseInt} = require('./utils');
+
 function base2ABase10(numeroBinario) {
-    return parseInt(numeroBinario, 2);
+    return ParseInt(numeroBinario, Bases.DECIMAL);
 }
 
 // Ejemplo de uso
-let numeroBinario = "101101";
+let numeroBinario = "11011";
 let numeroBase10DesdeBinario = base2ABase10(numeroBinario);
 console.log("Número binario " + numeroBinario + " en base 10: " + numeroBase10DesdeBinario);
