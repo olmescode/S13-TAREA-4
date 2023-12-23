@@ -22,67 +22,127 @@ import { base2ABase16 } from '../js/tareaFunciones/exercise20.js';
 // Dictionary of main functions and titles
 const exercises = {
     exercise1Button: {
-        title: "Funcion para ",
+        title: "Función para encontrar divisores de un número",
         func: encontrarDivisores,
         input: 1,
         inputLabels: ["Número"],
     },
     exercise2Button: {
-        title: "Funcion para ",
+        title: "Función para verificar si un número es perfecto",
         func: esNumeroPerfecto,
         input: 1,
         inputLabels: ["Número"],
     },
     exercise3Button: {
-        title: "Funcion para ",
+        title: "Función para verificar si un número es primo",
         func: esNumeroPrimo,
         input: 1,
         inputLabels: ["Número"],
     },
     exercise4Button: {
-        title: "Funcion para ",
+        title: "Función para encontrar números primos gemelos en un rango",
         func: encontrarPrimosGemelos,
         input: 2,
         inputLabels: ["Inicio", "Fin"],
     },
     exercise5Button: {
-        title: "Funcion para calcular el área de un rectángulo",
+        title: "Función para concatenar dos cadenas",
         func: concatenarCadenas,
         input: 2,
-        inputLabels: ["Base", "Altura"],
+        inputLabels: ["Cadena 1", "Cadena 2"],
     },
     exercise6Button: {
-        title: "Funcion para imprimir un nombre",
+        title: "Función para buscar una subcadena en una cadena",
         func: buscarSubcadena,
-        input: 1,
-        inputLabels: ["Nombre"],
+        input: 2,
+        inputLabels: ["Cadena", "Subcadena"],
     },
     exercise7Button: {
-        title: "Funcion para convertir Celsius a Fahrenheit",
+        title: "Función para insertar una subcadena en una posición dada",
         func: insertarSubcadena,
-        input: 1,
-        inputLabels: ["Temperatura en Celsius"],
+        input: 3,
+        inputLabels: ["Cadena", "Posición", "Subcadena"],
     },
     exercise8Button: {
-        title: "Funcion para contar un caracter en una frase",
+        title: "Función para eliminar una subcadena de una cadena",
         func: eliminarSubcadena,
         input: 2,
-        inputLabels: ["Frase", "Caracter a buscar"],
+        inputLabels: ["Cadena", "Subcadena"],
     },
     exercise9Button: {
-        title: "Funcion para imprimir los números del uno al diez",
+        title: "Función para convertir un arreglo a una cadena",
         func: convertirArregloACadena,
-        input: 0,
-        inputLabels: [],
+        input: 2,
+        inputLabels: ["Lista", "Separador"],
     },
     exercise10Button: {
-        title: "Funcion para sumar una lista de números",
+        title: "Función para encontrar el elemento mayor en un arreglo",
         func: encontrarMayorEnArreglo,
         input: 1,
         inputLabels: ["Lista (separado por comas)"],
     },
+    exercise11Button: {
+        title: "Función para buscar un elemento en un arreglo",
+        func: buscarElementoEnArreglo,
+        input: 2,
+        inputLabels: ["Lista (separado por comas)", "Elemento"],
+    },
+    exercise12Button: {
+        title: "Función para insertar un elemento en un arreglo en una posición dada",
+        func: insertarElementoEnArreglo,
+        input: 3,
+        inputLabels: ["Lista (separado por comas)", "Elemento", "Posición"],
+    },
+    exercise13Button: {
+        title: "Función para eliminar un elemento de un arreglo",
+        func: eliminarElementoDeArreglo,
+        input: 2,
+        inputLabels: ["Lista (separado por comas)", "Elemento"],
+    },
+    exercise14Button: {
+        title: "Función para convertir una cadena a un arreglo",
+        func: convertirCadenaAArreglo,
+        input: 1,
+        inputLabels: ["Cadena"],
+    },
+    exercise15Button: {
+        title: "Función para convertir de base 10 a base 2",
+        func: base10ABase2,
+        input: 1,
+        inputLabels: ["Número"],
+    },
+    exercise16Button: {
+        title: "Función para convertir de base 10 a base 8",
+        func: base10ABase8,
+        input: 1,
+        inputLabels: ["Número"],
+    },
+    exercise17Button: {
+        title: "Función para convertir de base 10 a base 16",
+        func: base10ABase16,
+        input: 1,
+        inputLabels: ["Número"],
+    },
+    exercise18Button: {
+        title: "Función para convertir de base 2 a base 10",
+        func: base2ABase10,
+        input: 1,
+        inputLabels: ["Número binario"],
+    },
+    exercise19Button: {
+        title: "Función para convertir de base 2 a base 8",
+        func: base2ABase8,
+        input: 1,
+        inputLabels: ["Número binario"],
+    },
+    exercise20Button: {
+        title: "Función para convertir de base 2 a base 16",
+        func: base2ABase16,
+        input: 1,
+        inputLabels: ["Número binario"],
+    },
 
-    // Add more exercises as needed
+    // ... (rest of the exercises)
 };
 
 export {exercises}
