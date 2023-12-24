@@ -1,6 +1,9 @@
 /*
-buscarElementoEnArreglo(arreglo, elemento)
+Busca un elemento en un arreglo y devuelve su índice si se encuentra.
 
+Parameters:
+arreglo: El arreglo en el que se buscará el elemento.
+elemento: El elemento que se está buscando.
 */
 import { IndexOfArray } from '../utils.js'
 //const { IndexOfArray } = require('../utils');
@@ -15,14 +18,4 @@ function buscarElementoEnArreglo(arreglo, elemento) {
     }
 }
 
-
-// Exporta la función
 export {buscarElementoEnArreglo}
-//module.exports = { buscarElementoEnArreglo };
-
-
-// Ejemplo de uso
-// let arregloBusqueda = [10, 20, 30, 40, 50];
-// let elementoABuscar = 50;
-// let resultadoBusquedaArreglo = buscarElementoEnArreglo(arregloBusqueda, elementoABuscar);
-// console.log(resultadoBusquedaArreglo);

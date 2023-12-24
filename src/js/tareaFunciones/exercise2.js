@@ -1,7 +1,9 @@
 /*
-esNumeroPerfecto(numero)
-Un número perfecto es aquel cuya suma de sus divisores propios (excluyendo él mismo)
-es igual al propio número.
+Determina si un número es perfecto, es decir, la suma de sus
+divisores propios (excluyendo él mismo) es igual al propio número.
+
+Parameters:
+numero: El número que se quiere verificar como perfecto.
 */
 function esNumeroPerfecto(numero) {
     numero = parseInt(numero);
@@ -19,12 +21,4 @@ function esNumeroPerfecto(numero) {
     return numero + " ¿es un número perfecto? " + (isPerfect ? "Sí" : "No")
 }
 
-// Exporta la función
 export {esNumeroPerfecto}
-//module.exports = { esNumeroPerfecto };
-
-
-// Ejemplo de uso
-// let perfectNumber = 28;
-// let isPerfect = esNumeroPerfecto(perfectNumber);
-// console.log(perfectNumber + " ¿es un número perfecto? " + (isPerfect ? "Sí" : "No"));

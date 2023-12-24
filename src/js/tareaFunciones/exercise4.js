@@ -1,6 +1,9 @@
 /*
- encontrarPrimosGemelos(inicio, fin)
- Los números primos gemelos son aquellos que tienen una diferencia de 2.
+Encuentra pares de números primos gemelos en un rango dado.
+
+Parameters:
+inicio: El inicio del rango.
+fin: El fin del rango.
 */
 //import { esNumeroPrimo } from './exercise3.js'
 //const { esNumeroPrimo } = require('./exercise3');
@@ -24,16 +27,17 @@ const esNumeroPrimo = (numero) => {
     let isPrime = null
 
     if (numero <= 1) {
-        return false;
+        isPrime = false;
     }
 
     for (let i = 2; i < numero; i++) {
         if (numero % i === 0) {
-            return false;
+            isPrime = false;
         }
     }
+    isPrime = true
 
-    return true;
+    return isPrime;
 }
 
 function encontrarPrimosGemelos(inicio, fin) {
@@ -52,18 +56,4 @@ function encontrarPrimosGemelos(inicio, fin) {
     return formatMensaje(paresPrimosGemelos, inicio, fin);;
 }
 
-// Exporta la función
 export {encontrarPrimosGemelos}
-//module.exports = { encontrarPrimosGemelos };
-
-
-/*
-// Ejemplo de uso
-let firts = 1;
-let last = 50;
-let gemelosEncontrados = encontrarPrimosGemelos(firts, last);
-console.log(`Pares de primos gemelos entre ${firts} y  ${last}: , existe :${gemelosEncontrados.length}`);
-gemelosEncontrados.forEach(element => {
-   console.log(element);
-});
-*/

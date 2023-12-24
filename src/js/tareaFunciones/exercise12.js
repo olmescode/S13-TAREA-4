@@ -1,29 +1,23 @@
 /*
-insertarElementoEnArreglo(arreglo, elemento, posicion)
+Inserta un elemento en una posición específica dentro de un arreglo.
+
+Parameters:
+arreglo: El arreglo en el que se insertará el elemento.
+elemento: El elemento a insertar.
+posicion: La posición en la que se insertará el elemento.
 */
 import { Splice } from '../utils.js'
 //const { Splice } = require('../utils');
 
 function insertarElementoEnArreglo(arreglo, elemento, posicion) {
-    var result = Splice(arreglo,posicion, 0, elemento);
-    var mssg =  "Elemento " + elemento + " insertado en la posición " + posicion + " del arreglo.";
-    console.log(mssg);
-    return result;
+    let resultadoInsercionArreglo = Splice(arreglo, posicion, 0, elemento);
+    let message = "Elemento " + elemento + " insertado en la posición " + posicion + " del arreglo." + "\n";
+
+    resultadoInsercionArreglo.forEach(element => {
+        message = message + element + ", "
+    });
+
+    return message;
 }
 
-// Exporta la función
 export {insertarElementoEnArreglo}
-//module.exports = { insertarElementoEnArreglo };
-
-
-/*
-// Ejemplo de uso
-let arregloInsertar = [1, 2, 4, 5];
-let elementoAInsertar = 3;
-let posicionInsercionArreglo = 2;
-let resultadoInsercionArreglo = insertarElementoEnArreglo(arregloInsertar, elementoAInsertar, posicionInsercionArreglo);
-
-resultadoInsercionArreglo.forEach(element => {
-    console.log(element);
-});
-*/

@@ -1,16 +1,12 @@
 /*
-concatenarCadenas(cadena1, cadena2)
+Concatena dos cadenas de texto.
 
+Parameters:
+cadena1: La primera cadena.
+cadena2: La segunda cadena.
 */
 function concatenarCadenas(cadena1, cadena2) {
     return `${cadena1} ${cadena2}`;
 }
 
-// Exporta la función
 export {concatenarCadenas}
-//module.exports = { concatenarCadenas };
-
-
-// Ejemplo de uso
-// let cadenaConcatenada = concatenarCadenas("Hola", "Mundo");
-// console.log("Cadena concatenada: " + cadenaConcatenada);

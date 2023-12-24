@@ -1,6 +1,10 @@
 /*
-encontrarDivisores(numero)
+Toma un número como parámetro y devuelve una lista de sus divisores.
+Los divisores son los números enteros por los cuales el número 
+proporcionado es divisible sin dejar residuo.
 
+Parameters:
+numero: El número del cual se quieren encontrar los divisores.
 */
 function encontrarDivisores(numero) {
     numero = parseInt(numero);
@@ -15,11 +19,4 @@ function encontrarDivisores(numero) {
     return "Los divisores de " + numero + " son: " + divisores.join(", ");
 }
 
-// Exporta la función
 export {encontrarDivisores}
-//module.exports = { encontrarDivisores };
-
-
-// Ejemplo de uso
-// let divisorsResult = encontrarDivisores(6);
-// console.log(divisorsResult);

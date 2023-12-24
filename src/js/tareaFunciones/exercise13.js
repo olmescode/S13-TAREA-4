@@ -1,38 +1,36 @@
 /*
-eliminarElementoDeArreglo(arreglo, elemento)
+Elimina un elemento de un arreglo y devuelve un mensaje indicando si se 
+realizó la eliminación.
 
+Parameters:
+arreglo: El arreglo del cual se eliminará el elemento.
+elemento: El elemento a eliminar.
 */
 import { IndexOfArray, Splice } from '../utils.js'
 //const { IndexOfArray, Splice } = require('../utils');
 
 function eliminarElementoDeArreglo(arreglo, elemento) {
-    let indice = IndexOfArray(arreglo,elemento);
-
+    let indice = IndexOfArray(arreglo, elemento);
+    let resultadoEliminacionArreglo = null
+    let message = ""
+    let resultadoInsercionArreglo = null
 
     if (indice !== -1) {
-        Splice(arreglo, indice, 1);
-        console.log("Elemento " + elemento + " eliminado del arreglo.");
-        return true;
+        resultadoInsercionArreglo = Splice(arreglo, indice, 1);
+        message = "Elemento " + elemento + " eliminado del arreglo." + "\n"
+        resultadoEliminacionArreglo = true;
     } else {
-        console.log( "El elemento " + elemento + " no se encuentra en el arreglo.");
-        return false;
+        message = "El elemento " + elemento + " no se encuentra en el arreglo."
+        resultadoEliminacionArreglo = false;
     }
+
+    if (resultadoEliminacionArreglo === true) {
+        resultadoInsercionArreglo.forEach(element => {
+            message = message + element + ", "
+        });
+    }
+
+    return message
 }
 
-// Exporta la función
 export {eliminarElementoDeArreglo}
-//module.exports = { eliminarElementoDeArreglo };
-
-
-/*
-// Ejemplo de uso
-let arregloEliminar = [10, 20, 30, 40, 50];
-let elementoAEliminar = 40;
-let resultadoEliminacionArreglo = eliminarElementoDeArreglo(arregloEliminar, elementoAEliminar);
-
-if (resultadoEliminacionArreglo===true) {
-    arregloEliminar.forEach(element => {
-        console.log(element);
-    });
-}
-*/
