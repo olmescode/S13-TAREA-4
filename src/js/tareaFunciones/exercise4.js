@@ -5,8 +5,8 @@ Parameters:
 inicio: El inicio del rango.
 fin: El fin del rango.
 */
-//import { esNumeroPrimo } from './exercise3.js'
-//const { esNumeroPrimo } = require('./exercise3');
+import { EsNumeroPrimo } from '../utils.js'
+//const { EsNumeroPrimo } = require('../utils');
 
 function formatMensaje(paresPrimosGemelos, inicio, fin) {
     if (paresPrimosGemelos.length > 0) {
@@ -22,24 +22,6 @@ function formatMensaje(paresPrimosGemelos, inicio, fin) {
     }
 }
 
-const esNumeroPrimo = (numero) => {
-    numero = parseInt(numero);
-    let isPrime = null
-
-    if (numero <= 1) {
-        isPrime = false;
-    }
-
-    for (let i = 2; i < numero; i++) {
-        if (numero % i === 0) {
-            isPrime = false;
-        }
-    }
-    isPrime = true
-
-    return isPrime;
-}
-
 function encontrarPrimosGemelos(inicio, fin) {
     inicio = parseInt(inicio);
     fin = parseInt(fin);
@@ -48,7 +30,7 @@ function encontrarPrimosGemelos(inicio, fin) {
 
     for (let i = inicio; i <= fin - 2; i++) {
         
-        if (esNumeroPrimo(i) && esNumeroPrimo(i + 2)) {
+        if (EsNumeroPrimo(i) && EsNumeroPrimo(i + 2)) {
             paresPrimosGemelos.push([i, i + 2]);
         }
     }
