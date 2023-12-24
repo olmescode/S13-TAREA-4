@@ -1,6 +1,5 @@
 import { storeSelectedButtonName, getSelectedButtonName} from './appState.js'
 import { exercises } from './exercisesDictionary.js'
-//const appState = require('./appState');
 //const exercises = require('./exercisesDictionary')
 
 // DOM elements
@@ -8,17 +7,21 @@ const titlePage = document.getElementById('titlePage');
 const inputValue1 = document.getElementById('inputValue1');
 const inputValue2 = document.getElementById('inputValue2');
 const inputValue3 = document.getElementById('inputValue3');
-const resultContainer = document.getElementById('resultContainer');
+const resultValue = document.getElementById('resultValue');
 const calculateButton = document.getElementById('calculateButton');
 const backButton = document.getElementById('backButton')
+const inputContainer1 = document.getElementById('inputContainer1')
+const inputContainer2 = document.getElementById('inputContainer2')
+const inputContainer3 = document.getElementById('inputContainer3')
+const resulContainer = document.getElementById('resultContainer')
 
 // Pages
-//const MAIN_PAGE = '../../index.html'
 const MAIN_PAGE = '/src/index.html'
+//const MAIN_PAGE = '../../index.html'
 
 // Function to show the result
 function showResult(result) {
-    resultContainer.value = result;
+    resultValue.value = result;
 };
 
 // Function to go back the main menu
@@ -34,7 +37,6 @@ function handleCalculateButtonClick() {
     // Check if the first input is empty and the exercise expects at least one input
     if (inputValue1.value === "" && selectedExercise.input !== 0) {
         alert("Please enter a value before calculating.");
-        console.error("Please enter a value before calculating.");
         return;
     }
 
@@ -56,28 +58,27 @@ function initializePage() {
         // Update the number of input fields based on the selected function
         if (selectedExercise.input === 1) {
             // Show one input field
-            // TODO: 'document.getElementById('inputContainer2')' Move to a const
-            document.getElementById('inputContainer2').style.display = 'none';
-            document.getElementById('inputContainer3').style.display = 'none';
+            inputContainer2.style.display = 'none';
+            inputContainer3.style.display = 'none';
             inputValue1.placeholder = selectedExercise.inputLabels[0];
         } else if (selectedExercise.input === 2) {
             // Show two input fields
-            document.getElementById('inputContainer2').style.display = 'block';
-            document.getElementById('inputContainer3').style.display = 'none';
+            inputContainer2.style.display = 'block';
+            inputContainer3.style.display = 'none';
             inputValue1.placeholder = selectedExercise.inputLabels[0];
             inputValue2.placeholder = selectedExercise.inputLabels[1];
         } else if (selectedExercise.input === 3) {
             // Show three input fields
-            document.getElementById('inputContainer2').style.display = 'block';
-            document.getElementById('inputContainer3').style.display = 'block';
+            inputContainer2.style.display = 'block';
+            inputContainer3.style.display = 'block';
             inputValue1.placeholder = selectedExercise.inputLabels[0];
             inputValue2.placeholder = selectedExercise.inputLabels[1];
             inputValue3.placeholder = selectedExercise.inputLabels[2];
         } else {
             // Handle other cases if needed
-            document.getElementById('inputContainer1').style.display = 'none';
-            document.getElementById('inputContainer2').style.display = 'none';
-            document.getElementById('inputContainer3').style.display = 'none';
+            inputContainer1.style.display = 'none';
+            inputContainer2.style.display = 'none';
+            inputContainer3.style.display = 'none';
         }
     }
 };
