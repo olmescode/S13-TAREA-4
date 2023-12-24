@@ -61,7 +61,9 @@ function Split(cadena, separador) {
         if (Substring(cadena, i, i + separador.length) === separador) {
 
             valInsert = Substring(cadena, inicio, i);
-            if (!(i === 0 && valInsert.length === 0)) {
+            if (i === 0 && valInsert.length !== 0) {
+                resultado.push(Substring(cadena, inicio, i));
+            } else if (valInsert.length> 0 ){
                 resultado.push(Substring(cadena, inicio, i));
             }
 

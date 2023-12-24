@@ -15,7 +15,6 @@ function buscarElementoEnArreglo(arreglo, elemento) {
         arreglo  = Split(arreglo,',')
     }
   
-
     let indice = IndexOfArray(arreglo, elemento);
 
     if (indice !== -1) {

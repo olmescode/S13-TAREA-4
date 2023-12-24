@@ -6,10 +6,17 @@ Parameters:
 arreglo: El arreglo del cual se eliminará el elemento.
 elemento: El elemento a eliminar.
 */
-import { IndexOfArray, Splice } from '../utils.js'
-//const { IndexOfArray, Splice } = require('../utils');
+import { IndexOfArray, Splice, Replace , Split} from '../utils.js'
+
 
 function eliminarElementoDeArreglo(arreglo, elemento) {
+
+    if (typeof arreglo === 'string') {
+        arreglo  = Replace(arreglo,';', ',');
+        arreglo  = Split(arreglo,',')
+    }
+
+
     let indice = IndexOfArray(arreglo, elemento);
     let resultadoEliminacionArreglo = null
     let message = ""

@@ -4,20 +4,76 @@ import { ConvertBase, ParseInt } from '../utils.js';
 class BaseConverter {
     // Function to convert base 10 to base 2
     static base10ABase2(numero) {
-        let numeroBase2 = ConvertBase(numero, Bases.BINARIO);
-        return "Número " + numero + " en base 2: " + numeroBase2
+        try {
+
+            // Verifica si la cadena original contiene solo dígitos
+            if (!BaseConverter._isNumeric(numero)) {
+                throw new Error("La cadena no contiene solo dígitos.");
+            }
+
+            const numeroConvertido = parseFloat(numero);
+
+            // Verifica si la conversión fue exitosa y si la longitud es la misma
+            if (isNaN(numeroConvertido) || !isFinite(numeroConvertido) || numero.length !== numeroConvertido.toString().length) {
+                throw new Error("Los datos no son un número válido.");
+            }
+            // Continúa con la lógica de conversión
+            const numeroBase2 = ConvertBase(numeroConvertido, Bases.BINARIO);
+            return `Número ${numeroConvertido} en base 2: ${numeroBase2}`;
+        } catch (err) {
+            return `Error: ${err.message}`;
+        }
     }
 
     // Function to convert base 10 to base 8
     static base10ABase8(numero) {
-        let numeroBase8 = ConvertBase(numero, Bases.OCTAL);
-        return "Número " + numero + " en base 8: " + numeroBase8
+        try {
+
+            // Verifica si la cadena original contiene solo dígitos
+            if (!BaseConverter._isNumeric(numero)) {
+                throw new Error("La cadena no contiene solo dígitos.");
+            }
+
+            const numeroConvertido = parseFloat(numero);
+
+            // Verifica si la conversión fue exitosa y si la longitud es la misma
+            if (isNaN(numeroConvertido) || !isFinite(numeroConvertido) || numero.length !== numeroConvertido.toString().length) {
+                throw new Error("Los datos no son un número válido.");
+            }
+
+            // Continúa con la lógica de conversión
+            let numeroBase8 = ConvertBase(numeroConvertido, Bases.OCTAL);
+            return "Número " + numero + " en base 8: " + numeroBase8
+        }
+        catch (err) {
+            return `Error: ${err.message}`;
+        }
+
     }
 
     // Function to convert base 10 to base 16
     static base10ABase16(numero) {
-        let numeroBase16 = ConvertBase(numero, Bases.HEXADECIMAL);
-        return "Número " + numero + " en base 16: " + numeroBase16
+
+        try {
+            // Verifica si la cadena original contiene solo dígitos
+            if (!BaseConverter._isNumeric(numero)) {
+                throw new Error("La cadena no contiene solo dígitos.");
+            }
+
+            const numeroConvertido = parseFloat(numero);
+
+            // Verifica si la conversión fue exitosa y si la longitud es la misma
+            if (isNaN(numeroConvertido) || !isFinite(numeroConvertido) || numero.length !== numeroConvertido.toString().length) {
+                throw new Error("Los datos no son un número válido.");
+            }
+
+            let numeroBase16 = ConvertBase(numeroConvertido, Bases.HEXADECIMAL);
+            return "Número " + numero + " en base 16: " + numeroBase16
+        }
+         catch (err) {
+            return `Error: ${err.message}`;
+        }
+
     }
 
     // Function to convert base 2 to base 10
@@ -37,6 +93,12 @@ class BaseConverter {
         let numeroHexadecimalDesdeBinario = ParseInt(numeroBinario, Bases.HEXADECIMAL);
         return "Número binario " + numeroBinario + " en base 16: " + numeroHexadecimalDesdeBinario
     }
+
+    // Private function to validate the data type as a number
+    static _isNumeric(numero) {
+        return /^-?\d+$/.test(numero);
+    }
+
 }
 
 export default BaseConverter;
