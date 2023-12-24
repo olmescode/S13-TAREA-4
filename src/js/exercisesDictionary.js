@@ -3,7 +3,7 @@ import BaseConverter from '../js/tareaFunciones/BaseConverter.js';
 
 import { encontrarDivisores } from '../js/tareaFunciones/exercise1.js'
 import { esNumeroPerfecto } from '../js/tareaFunciones/exercise2.js'
-import { esNumeroPrimo } from '../js/tareaFunciones/exercise3.js'
+import { verificarSiEsPrimo } from '../js/tareaFunciones/exercise3.js'
 import { encontrarPrimosGemelos } from '../js/tareaFunciones/exercise4.js'
 import { concatenarCadenas } from '../js/tareaFunciones/exercise5.js'
 import { buscarSubcadena } from '../js/tareaFunciones/exercise6.js';
@@ -32,7 +32,7 @@ const exercises = {
     },
     exercise3Button: {
         title: "Función para verificar si un número es primo",
-        func: esNumeroPrimo,
+        func: verificarSiEsPrimo,
         input: 1,
         inputLabels: ["Número"],
     },

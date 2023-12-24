@@ -219,5 +219,5 @@ function ParseInt(numero, base) {
 }
 
 // Exporta la función
-export { Substring, EliminarSubcadena, Split, Join, MathMax, IndexOfArray, Splice, ConvertBase, ParseInt };
+export { EsNumeroPrimo, Substring, EliminarSubcadena, Split, Join, MathMax, IndexOfArray, Splice, ConvertBase, ParseInt };
 //module.exports = { Substring, EliminarSubcadena, Split, Join, MathMax, IndexOfArray, Splice, ConvertBase, ParseInt };
