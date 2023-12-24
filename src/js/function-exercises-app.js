@@ -31,10 +31,14 @@ function handleCalculateButtonClick() {
     let selectedButtonName = getSelectedButtonName();
     let selectedExercise = exercises[selectedButtonName];
 
+    console.log(selectedButtonName);
+
     // Check if the first input is empty and the exercise expects at least one input
     if (inputValue1.value === "" && selectedExercise.input !== 0) {
-        alert("Please enter a value before calculating.");
-        console.error("Please enter a value before calculating.");
+        let mssg= "Please enter a value before calculating.";
+        alert(mssg);
+        console.log(mssg);
+        resultContainer.value =mssg;
         return;
     }
 

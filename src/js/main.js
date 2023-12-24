@@ -13,6 +13,8 @@ const exercise7Button = document.getElementById('exercise7Button');
 const exercise8Button = document.getElementById('exercise8Button');
 const exercise9Button = document.getElementById('exercise9Button');
 const exercise10Button = document.getElementById('exercise10Button');
+const exercise11Button = document.getElementById('exercise11Button');
+
 
 // Pages
 const FUNCTION_EXERCISES_APP = '/src/pages/functionExercisesApp/function_exercises_app.html'
@@ -67,3 +69,8 @@ exercise9Button.addEventListener('click', function() {
 exercise10Button.addEventListener('click', function() {
     handleButtonClick(this.id);
 });
+
+exercise11Button.addEventListener('click', function() {
+    handleButtonClick(this.id);
+});
+

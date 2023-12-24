@@ -70,7 +70,7 @@ const exercises = {
         title: "Función para convertir un arreglo a una cadena",
         func: convertirArregloACadena,
         input: 2,
-        inputLabels: ["Lista", "Separador"],
+        inputLabels: ["Lista:","Separador"],
     },
     exercise10Button: {
         title: "Función para encontrar el elemento mayor en un arreglo",
