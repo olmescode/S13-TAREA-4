@@ -1,3 +1,6 @@
+// Import the BaseConverter class
+import BaseConverter from '../js/tareaFunciones/BaseConverter.js';
+
 import { encontrarDivisores } from '../js/tareaFunciones/exercise1.js'
 import { esNumeroPerfecto } from '../js/tareaFunciones/exercise2.js'
 import { esNumeroPrimo } from '../js/tareaFunciones/exercise3.js'
@@ -12,12 +15,6 @@ import { buscarElementoEnArreglo } from '../js/tareaFunciones/exercise11.js';
 import { insertarElementoEnArreglo } from '../js/tareaFunciones/exercise12.js';
 import { eliminarElementoDeArreglo } from '../js/tareaFunciones/exercise13.js';
 import { convertirCadenaAArreglo } from '../js/tareaFunciones/exercise14.js';
-import { base10ABase2 } from '../js/tareaFunciones/exercise15.js';
-import { base10ABase8 } from '../js/tareaFunciones/exercise16.js';
-import { base10ABase16 } from '../js/tareaFunciones/exercise17.js';
-import { base2ABase10 } from '../js/tareaFunciones/exercise18.js';
-import { base2ABase8 } from '../js/tareaFunciones/exercise19.js';
-import { base2ABase16 } from '../js/tareaFunciones/exercise20.js';
 
 // Dictionary of main functions and titles
 const exercises = {
@@ -107,37 +104,37 @@ const exercises = {
     },
     exercise15Button: {
         title: "Función para convertir de base 10 a base 2",
-        func: base10ABase2,
+        func: BaseConverter.base10ABase2,
         input: 1,
         inputLabels: ["Número"],
     },
     exercise16Button: {
         title: "Función para convertir de base 10 a base 8",
-        func: base10ABase8,
+        func: BaseConverter.base10ABase8,
         input: 1,
         inputLabels: ["Número"],
     },
     exercise17Button: {
         title: "Función para convertir de base 10 a base 16",
-        func: base10ABase16,
+        func: BaseConverter.base10ABase16,
         input: 1,
         inputLabels: ["Número"],
     },
     exercise18Button: {
         title: "Función para convertir de base 2 a base 10",
-        func: base2ABase10,
+        func: BaseConverter.base2ABase10,
         input: 1,
         inputLabels: ["Número binario"],
     },
     exercise19Button: {
         title: "Función para convertir de base 2 a base 8",
-        func: base2ABase8,
+        func: BaseConverter.base2ABase8,
         input: 1,
         inputLabels: ["Número binario"],
     },
     exercise20Button: {
         title: "Función para convertir de base 2 a base 16",
-        func: base2ABase16,
+        func: BaseConverter.base2ABase16,
         input: 1,
         inputLabels: ["Número binario"],
     },
