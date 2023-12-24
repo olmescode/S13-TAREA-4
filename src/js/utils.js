@@ -1,6 +1,22 @@
 import { Bases } from './bases.js'
 //const Bases = require('./bases');
 
+function EsNumeroPrimo(numero) {
+    numero = parseInt(numero);
+
+    if (numero <= 1) {
+        return false;
+    }
+
+    for (let i = 2; i < numero; i++) {
+        if (numero % i === 0) {
+            return false;
+        }
+    }
+
+    return true;
+}
+
 function Substring(cadena, start, end) {
     // Si el índice de inicio no está presente, se establece en 0 por defecto
     start = start || 0;
@@ -161,7 +177,6 @@ function ConvertBase(numero, base) {
     }
 
     return numero < 0 ? '-' + resultado : resultado;
-
 }
 
 function _isBinary(numero) {
