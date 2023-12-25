@@ -37,8 +37,8 @@ function Substring(cadena, start, end) {
     start = Math.min(start, end);
 
     // Construir la subcadena manualmente
-    var subcadena = '';
-    for (var i = start; i < end && i < cadena.length; i++) {
+    let subcadena = '';
+    for (let i = start; i < end && i < cadena.length; i++) {
         subcadena += cadena[i];
     }
 
@@ -47,21 +47,23 @@ function Substring(cadena, start, end) {
 
 // Función eliminarSubcadena utilizando las funciones personalizadas
 function EliminarSubcadena(cadena, subcadena) {
-    var array = Split(cadena, subcadena);
+    let array = Split(cadena, subcadena);
     return Join(array, '');
 }
 
 // Función split personalizada
 function Split(cadena, separador) {
-    var resultado = [];
-    var inicio = 0;
-    var valInsert = "";
+    let resultado = [];
+    let inicio = 0;
+    let valInsert = "";
 
-    for (var i = 0; i < cadena.length; i++) {
+    for (let i = 0; i < cadena.length; i++) {
         if (Substring(cadena, i, i + separador.length) === separador) {
 
             valInsert = Substring(cadena, inicio, i);
-            if (!(i === 0 && valInsert.length === 0)) {
+            if (i === 0 && valInsert.length !== 0) {
+                resultado.push(Substring(cadena, inicio, i));
+            } else if (valInsert.length> 0 ){
                 resultado.push(Substring(cadena, inicio, i));
             }
 
@@ -72,10 +74,87 @@ function Split(cadena, separador) {
     return resultado;
 }
 
+// Función Replace busca y reemplaza
+function Replace(inputString, target, replacement) {
+    let result = '';
+    let lastIdx = 0;
+    let idx = 0;
+
+    // Buscar y reemplazar todas las ocurrencias del patrón
+    while ((idx =inputString.indexOf(target, lastIdx)) !== -1) {
+        // Agregar la parte no coincidente a la salida
+        result += Substring(inputString, lastIdx, idx);
+
+        // Agregar el texto de reemplazo a la salida
+        result += replacement;
+
+        // Actualizar el índice para continuar la búsqueda
+        lastIdx = idx + target.length;
+    }
+
+    // Agregar la parte restante de la cadena original a la salida
+    result += Substring(inputString,lastIdx);
+
+    return result;
+}
+
+// Devuelve la primera posicion del textto buscado
+function IndexOfKMP(text, pattern) {
+    const lps = _calculateLPSArray(pattern);
+    let i = 0;  // Índice para la cadena de texto
+    let j = 0;  // Índice para la subcadena (patrón)
+
+    while (i < text.length) {
+        if (pattern[j] === text[i]) {
+            i++;
+            j++;
+        }
+
+        if (j === pattern.length) {
+            // Se encontró una coincidencia, devuelve la posición
+            return i - j;
+        } else if (i < text.length && pattern[j] !== text[i]) {
+            if (j !== 0) {
+                // Desplazamiento basado en el array LPS
+                j = lps[j - 1];
+            } else {
+                i++;
+            }
+        }
+    }
+
+    return -1;  // No se encontró ninguna coincidencia
+}
+
+// Determinar cuántos caracteres se pueden omitir al realizar un desplazamiento en caso 
+// de que se produzca una no coincidencia durante la búsqueda del patrón en la cadena de texto
+function _calculateLPSArray(pattern) {
+    const lps = Array(pattern.length).fill(0);
+    let len = 0;  // Longitud de la subcadena más larga coincidente hasta el momento
+    let i = 1;
+
+    while (i < pattern.length) {
+        if (pattern[i] === pattern[len]) {
+            len++;
+            lps[i] = len;
+            i++;
+        } else {
+            if (len !== 0) {
+                len = lps[len - 1];
+            } else {
+                lps[i] = 0;
+                i++;
+            }
+        }
+    }
+
+    return lps;
+}
+
 // Función join personalizada
 function Join(array, separador) {
-    var resultado = "";
-    for (var i = 0; i < array.length - 1; i++) {
+    let resultado = "";
+    for (let i = 0; i < array.length - 1; i++) {
         resultado += array[i] + separador;
     }
     resultado += array[array.length - 1];
@@ -99,6 +178,7 @@ function MathMax(arreglo) {
     return maximo;
 }
 
+//
 function IndexOfArray(arreglo, elemento) {
     for (let i = 0; i < arreglo.length; i++) {
         if (arreglo[i] === elemento) {
@@ -108,6 +188,7 @@ function IndexOfArray(arreglo, elemento) {
     return -1; // Devolver -1 si el elemento no se encuentra en el arreglo
 }
 
+//
 function Splice(arreglo, inicio, cantidadAEliminar, ...elementosAInsertar) {
     inicio = inicio < 0 ? arreglo.length + inicio : inicio;
     inicio = Math.min(arreglo.length, inicio);
@@ -218,6 +299,5 @@ function ParseInt(numero, base) {
     return ConvertBase(resultado, base);
 }
 
-// Exporta la función
-export { EsNumeroPrimo, Substring, EliminarSubcadena, Split, Join, MathMax, IndexOfArray, Splice, ConvertBase, ParseInt };
+export { EsNumeroPrimo, Substring, EliminarSubcadena, Split, Join, MathMax, IndexOfArray, Splice, ConvertBase, ParseInt , Replace};
 //module.exports = { Substring, EliminarSubcadena, Split, Join, MathMax, IndexOfArray, Splice, ConvertBase, ParseInt };

@@ -5,11 +5,11 @@ Parameters:
 arreglo: El arreglo a convertir.
 separador: El separador entre los elementos en la cadena.
 */
-import { Join } from '../utils.js'
-//const { Join } = require('../utils');
+import { Join , Split} from '../utils.js'
 
 function convertirArregloACadena(arreglo, separador) {
-    let resultadoConversion = Join(arreglo, separador);
+    let array =Split(arreglo, separador);
+    let resultadoConversion = Join(array, separador);
     return "Arreglo convertido a cadena: " + resultadoConversion
 }
 

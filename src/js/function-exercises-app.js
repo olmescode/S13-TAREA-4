@@ -81,7 +81,7 @@ function initializePage() {
             inputContainer3.style.display = 'none';
         }
     }
-};
+}
 
 // Event listener for the calculate button
 calculateButton.addEventListener('click', handleCalculateButtonClick);

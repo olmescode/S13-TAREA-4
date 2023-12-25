@@ -6,10 +6,10 @@ cadena: La cadena principal.
 subcadena: La subcadena a eliminar.
 */
 import { EliminarSubcadena } from '../utils.js'
-//const { EliminarSubcadena } = require('../utils');
 
 function eliminarSubcadena(cadena, subcadena) {
-    return EliminarSubcadena(cadena,subcadena);
+    let resultadoEliminacion = EliminarSubcadena(cadena,subcadena);
+    return "Texto después de eliminar la subcadena: " + resultadoEliminacion
 }
 
 export {eliminarSubcadena}

@@ -100,7 +100,7 @@ const exercises = {
         title: "Función para convertir una cadena a un arreglo",
         func: convertirCadenaAArreglo,
         input: 1,
-        inputLabels: ["Cadena"],
+        inputLabels: ["Cadena (separado por espacios)"],
     },
     exercise15Button: {
         title: "Función para convertir de base 10 a base 2",

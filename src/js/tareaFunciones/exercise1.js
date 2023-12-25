@@ -6,7 +6,6 @@ proporcionado es divisible sin dejar residuo.
 Parameters:
 numero: El número del cual se quieren encontrar los divisores.
 */
-
 import { Join } from '../utils.js'
 
 function encontrarDivisores(numero) {
@@ -19,7 +18,7 @@ function encontrarDivisores(numero) {
         }
     }
 
-    return "Los divisores de " + numero + " son: " + Join(divisores,";");
+    return "Los divisores de " + numero + " son: " + Join(divisores, ";");
 }
 
 export {encontrarDivisores}

@@ -5,10 +5,14 @@ Parameters:
 arreglo: El arreglo en el que se buscará el elemento.
 elemento: El elemento que se está buscando.
 */
-import { IndexOfArray } from '../utils.js'
-//const { IndexOfArray } = require('../utils');
+import { IndexOfArray ,Split,Replace} from '../utils.js'
 
 function buscarElementoEnArreglo(arreglo, elemento) {
+    if (typeof arreglo === 'string') {
+        arreglo  = Replace(arreglo,';', ',');
+        arreglo  = Split(arreglo, ',')
+    }
+  
     let indice = IndexOfArray(arreglo, elemento);
 
     if (indice !== -1) {

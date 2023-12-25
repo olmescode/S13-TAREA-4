@@ -2,19 +2,34 @@
 
 body {
     font-family: 'Arial', sans-serif;
-    margin: 0; /* Márgenes superior e inferior */
+    margin: 80px 0 80px; /* Ajusta el margen superior según sea necesario */
     padding: 0;
-    background-color: #1a1a1a; /* Dark background */
+    position: relative;
+    min-height: calc(100vh - 80px); /* Calcula el alto mínimo en función del encabezado */
+    background-color: #1a1a1a;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-height: 100vh; /* Altura mínima igual al viewport */
-    color: #fff; /* Light text color */
-    overflow-y: auto; /* Enable vertical scrolling */
+    color: #fff;
+    overflow-y: auto;
 }
 
-h1 {
+header {
+    height: 80px;
+    padding: 0;
+    margin: 0;
+    background-color: #1a1a1a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 2;
+}
+
+header h1 {
     color: #007BFF;
     text-align: center;
     margin-bottom: 20px;
@@ -27,24 +42,27 @@ h1 {
     z-index: 1;
 }
 
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    color: #007BFF;
+    background-color: #1a1a1a;
+    padding: 10px 0;
+    z-index: 2;
+}
+
 ul {
     list-style-type: none;
     padding: 0;
     text-align: center;
 }
 
-button {
-    display: inline-block;
-    padding: 12px 24px; /* Increased padding for buttons */
-    margin: 10px;
-    background-color: #007BFF;
-    color: #fff;
-    font-weight: bold;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    font-size: 16px; /* Slightly larger font size */
+.items {
+    display: flex;
+    justify-content: center;
+    margin: 10px, 0, 10px;
 }
 
 button:hover {
@@ -52,18 +70,27 @@ button:hover {
 }
 
 #buttonContainer {
-    margin: 20px 40px; /* Márgenes superior e inferior para el contenedor de botones */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
-/* Ensure backButton is fixed at the bottom */
-#backButton {
-    position: fixed;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
+/* Estilos específicos para cada botón */
+#buttonContainer button {
+    display: inline-block;
+    margin: 5px;
+    width: 150px;
+    max-width: 150px;
+    padding: 12px 24px; /* Padding for buttons */
     background-color: #007BFF;
-}
-
-#backButton:hover {
-    background-color: #0056b3;
+    color: #fff;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 16px;
 }

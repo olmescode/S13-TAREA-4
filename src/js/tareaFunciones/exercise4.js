@@ -6,7 +6,6 @@ inicio: El inicio del rango.
 fin: El fin del rango.
 */
 import { EsNumeroPrimo } from '../utils.js'
-//const { EsNumeroPrimo } = require('../utils');
 
 function formatMensaje(paresPrimosGemelos, inicio, fin) {
     if (paresPrimosGemelos.length > 0) {
@@ -35,7 +34,7 @@ function encontrarPrimosGemelos(inicio, fin) {
         }
     }
 
-    return formatMensaje(paresPrimosGemelos, inicio, fin);;
+    return formatMensaje(paresPrimosGemelos, inicio, fin);
 }
 
 export {encontrarPrimosGemelos}

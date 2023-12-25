@@ -5,11 +5,19 @@ Parameters:
 cadena: La cadena que se convertirá en un arreglo.
 */
 import { Split } from '../utils.js'
-//const { Split } = require('../utils');
 
 function convertirCadenaAArreglo(cadena) {
-    let arregloConvertido = Split(cadena, '');
-    return "Cadena convertida a arreglo: ", arregloConvertido
-}
+    let message = "Cadena convertida a arreglo:\n";
+    let i  = 0;
+
+    let arregloConvertido = Split(cadena, ' ');
+
+    arregloConvertido.forEach(element => {
+        message +=`[${i}] ${element} \n`;
+        i++;
+   });
+
+    return message;
+};
 
 export {convertirCadenaAArreglo}
