@@ -6,7 +6,6 @@ arreglo: El arreglo a convertir.
 separador: El separador entre los elementos en la cadena.
 */
 import { Join , Split} from '../utils.js'
-//const { Join } = require('../utils');
 
 function convertirArregloACadena(arreglo, separador) {
     let array =Split(arreglo, separador);

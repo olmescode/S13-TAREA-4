@@ -6,7 +6,6 @@ arreglo: El arreglo de números.
 */
 import { MathMax, Split } from '../utils.js'
 
-
 function encontrarMayorEnArreglo(arreglo) {
     if (typeof arreglo === 'string') {
         arreglo  = Split(arreglo,',')

@@ -28,9 +28,17 @@ function myIndexOf(cadena, subcadena, desde = 0) {
     return -1;
 }
 
-function buscarSubcadena(cadena, subcadena) {
-    const posicion = myIndexOf(cadena, subcadena);
-    return posicion !== -1 ? posicion : null;
+function buscarSubcadena(cadena, subcadenaBuscada) {
+    const posicion = myIndexOf(cadena, subcadenaBuscada);
+    let result =  null
+
+    if (posicion !== null) {
+        result = `La subcadena "${subcadenaBuscada}" se encontró en la posición ${posicion}.`;
+    } else {
+        result = `La subcadena "${subcadenaBuscada}" no se encontró en la cadena principal.`;
+    }
+
+    return result
 }
 
-export {buscarSubcadena}
+export { buscarSubcadena }

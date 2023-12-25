@@ -5,8 +5,5 @@ const Bases = {
     HEXADECIMAL: 16
 };
 
-
-
-
 export { Bases };
 //module.exports = Bases;

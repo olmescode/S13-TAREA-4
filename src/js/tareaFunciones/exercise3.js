@@ -6,7 +6,6 @@ Parameters:
 numero: El número que se quiere verificar como primo.
 */
 import { EsNumeroPrimo } from '../utils.js'
-//const { EsNumeroPrimo } = require('../utils');
 
 const verificarSiEsPrimo = (numero) => {
     const esPrimo = EsNumeroPrimo(numero);

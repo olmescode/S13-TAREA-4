@@ -7,7 +7,6 @@ elemento: El elemento a insertar.
 posicion: La posición en la que se insertará el elemento.
 */
 import { Splice, Replace, Split } from '../utils.js'
-//const { Splice } = require('../utils');
 
 function insertarElementoEnArreglo(arreglo, elemento, posicion) {
 

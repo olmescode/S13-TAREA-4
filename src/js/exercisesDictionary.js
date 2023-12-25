@@ -1,7 +1,5 @@
 // Import the BaseConverter class
 import BaseConverter from '../js/tareaFunciones/BaseConverter.js';
-import {ExerciseType} from '../js/types.js';
-import {GenereatedArryList, GenereatedText, GenereatedNumber,GenereateBinary} from '../js/tareaFunciones/SeedInitial.js';
 
 import { encontrarDivisores } from '../js/tareaFunciones/exercise1.js'
 import { esNumeroPerfecto } from '../js/tareaFunciones/exercise2.js'
@@ -72,7 +70,7 @@ const exercises = {
         title: "Función para convertir un arreglo a una cadena",
         func: convertirArregloACadena,
         input: 2,
-        inputLabels: ["Lista:","Separador"],
+        inputLabels: ["Lista", "Separador"],
     },
     exercise10Button: {
         title: "Función para encontrar el elemento mayor en un arreglo",
@@ -85,72 +83,64 @@ const exercises = {
         func: buscarElementoEnArreglo,
         input: 2,
         inputLabels: ["Lista (separado por comas)", "Elemento"],
-        defaultValues: GenereatedArryList
     },
     exercise12Button: {
         title: "Función para insertar un elemento en un arreglo en una posición dada",
         func: insertarElementoEnArreglo,
         input: 3,
         inputLabels: ["Lista (separado por comas)", "Elemento", "Posición"],
-        defaultValues: GenereatedArryList,
     },
     exercise13Button: {
         title: "Función para eliminar un elemento de un arreglo",
         func: eliminarElementoDeArreglo,
         input: 2,
         inputLabels: ["Lista (separado por comas)", "Elemento"],
-        defaultValues: GenereatedArryList
     },
     exercise14Button: {
         title: "Función para convertir una cadena a un arreglo",
         func: convertirCadenaAArreglo,
         input: 1,
-        inputLabels: ["Cadena (separa los elementos por cada espacio en blaco)"],
-        defaultValues: GenereatedText,
+        inputLabels: ["Cadena (separado por espacios)"],
     },
     exercise15Button: {
         title: "Función para convertir de base 10 a base 2",
         func: BaseConverter.base10ABase2,
         input: 1,
         inputLabels: ["Número"],
-        defaultValues: GenereatedNumber,
     },
     exercise16Button: {
         title: "Función para convertir de base 10 a base 8",
         func: BaseConverter.base10ABase8,
         input: 1,
         inputLabels: ["Número"],
-        defaultValues: GenereatedNumber,
     },
     exercise17Button: {
         title: "Función para convertir de base 10 a base 16",
         func: BaseConverter.base10ABase16,
         input: 1,
         inputLabels: ["Número"],
-        defaultValues: GenereatedNumber,
     },
     exercise18Button: {
         title: "Función para convertir de base 2 a base 10",
         func: BaseConverter.base2ABase10,
         input: 1,
         inputLabels: ["Número binario"],
-        defaultValues: GenereateBinary,
     },
     exercise19Button: {
         title: "Función para convertir de base 2 a base 8",
         func: BaseConverter.base2ABase8,
         input: 1,
         inputLabels: ["Número binario"],
-        defaultValues: GenereateBinary,
     },
     exercise20Button: {
         title: "Función para convertir de base 2 a base 16",
         func: BaseConverter.base2ABase16,
         input: 1,
         inputLabels: ["Número binario"],
-        defaultValues: GenereateBinary,
     },
 
+    // ... (rest of the exercises)
 };
 
 export {exercises}
+//module.exports = exercises;

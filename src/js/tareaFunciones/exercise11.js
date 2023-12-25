@@ -7,12 +7,10 @@ elemento: El elemento que se está buscando.
 */
 import { IndexOfArray ,Split,Replace} from '../utils.js'
 
-
 function buscarElementoEnArreglo(arreglo, elemento) {
-
     if (typeof arreglo === 'string') {
         arreglo  = Replace(arreglo,';', ',');
-        arreglo  = Split(arreglo,',')
+        arreglo  = Split(arreglo, ',')
     }
   
     let indice = IndexOfArray(arreglo, elemento);
