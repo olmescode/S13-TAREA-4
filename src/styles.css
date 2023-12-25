@@ -2,17 +2,49 @@
 
 body {
     font-family: 'Arial', sans-serif;
-    margin: 0; /* Márgenes superior e inferior */
+    margin: 80px 0 0; /* Ajusta el margen superior según sea necesario */
     padding: 0;
-    background-color: #1a1a1a; /* Dark background */
+    position: relative;
+    min-height: calc(100vh - 80px); /* Calcula el alto mínimo en función del encabezado */
+    background-color: #242424;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-height: 100vh; /* Altura mínima igual al viewport */
-    color: #fff; /* Light text color */
-    overflow-y: auto; /* Enable vertical scrolling */
+    color: #fff;
+    overflow-y: auto;
 }
+
+footer {
+    position: fixed; /* Cambiado a posición fija para que aparezca por encima del contenido */
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    color: #007BFF;
+    background-color: black; /* Fondo negro para mayor visibilidad */
+    padding: 10px 0; /* Ajusta según sea necesario */
+    z-index: 1; /* Asegura que esté sobre otros elementos */
+}
+
+
+header {
+    height: 80px;
+    padding: 0;
+    margin: 0;
+    background-color: black;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 2; /* Asegura que esté sobre otros elementos */
+}
+header  h1{
+    color: #fff; /* Color del texto blanco */
+}
+
 
 h1 {
     color: #007BFF;
@@ -38,7 +70,7 @@ button {
     padding: 12px 24px; /* Increased padding for buttons */
     margin: 10px;
     background-color: #007BFF;
-    color: #fff;
+    color: #bcd1ef;
     font-weight: bold;
     border: none;
     border-radius: 5px;
@@ -51,9 +83,6 @@ button:hover {
     background-color: #0056b3;
 }
 
-#buttonContainer {
-    margin: 20px 40px; /* Márgenes superior e inferior para el contenedor de botones */
-}
 
 /* Ensure backButton is fixed at the bottom */
 #backButton {
@@ -67,3 +96,32 @@ button:hover {
 #backButton:hover {
     background-color: #0056b3;
 }
+
+.items {
+    display: flex;
+    justify-content: center;
+  }
+  
+  #buttonContainer {
+    list-style: none;
+    padding: 0;
+    margin: 0; /* Eliminado el margen para reducir espacio */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Centra los elementos en la lista */
+}
+
+  /* Estilos específicos para cada botón */
+  #buttonContainer button {
+    margin: 5px;
+    padding: 10px;
+    width: 150px; /* Ajusta según sea necesario */
+    max-width: 300px;
+  }
+  
+  /* Media query para dos columnas cuando la pantalla es lo suficientemente ancha */
+  @media (min-width: 768px) {
+    #buttonContainer button {
+      flex-basis: calc(33.33% - 30px); /* 33.33% del ancho menos márgenes */
+    }
+  }

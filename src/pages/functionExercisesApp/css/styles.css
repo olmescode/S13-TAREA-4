@@ -3,13 +3,49 @@
 body {
     font-family: 'Arial', sans-serif;
     margin: 0;
-    padding: 20px;
+    padding: 0;
     background-color: #1a1a1a; /* Dark background */
     color: #fff; /* Light text color */
     text-align: center;
 }
 
-h1 {
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: black;
+    color: #fff;
+    padding: 10px; /* Añadido espacio alrededor del contenido del encabezado */
+    position: fixed; /* Fija el encabezado en la parte superior */
+    width: 100%; /* Ocupa el 100% del ancho */
+    height: 50px;
+    top: 0; /* Fija el encabezado en la parte superior */
+    z-index: 1000; /* Valor alto para asegurar que esté encima de otros elementos */
+}
+
+.go-back-button {
+    background-color: #9308ca;
+    color: #e4d3eb;
+    transition: background-color 0.3s, color 0.3s;
+    order: 1;
+    margin-bottom: 10px;
+}
+
+.go-back-button:hover {
+    background-color: #663399;
+    color: #fff;
+}
+
+#titlePage {
+    margin: 0;
+    margin-top: 10px;
+    margin-left: 80px;
+    margin-right: 80px;
+    padding: 0;
+    order: 0;
+}
+
+h1 , h2{
     color: #9b59b6; /* Purple title */
     position: fixed;
     top: 0;
@@ -47,7 +83,7 @@ textarea {
 
 /* Adjusted styles for result container */
 .result-container {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 #resultContainer {
@@ -78,8 +114,11 @@ button:hover {
     background-color: #8e44ad; /* Darker purple on hover */
 }
 
-/* Add spacing between buttons */
-.calculate-button,
-.go-back-button {
-    margin-top: 20px;
+
+.calculate-button{
+    margin-top: 10px;
+}
+
+main {
+    padding-top: 100px; /* Ajusta según la altura del encabezado */
 }

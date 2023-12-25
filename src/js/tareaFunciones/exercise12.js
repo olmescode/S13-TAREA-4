@@ -18,9 +18,11 @@ function insertarElementoEnArreglo(arreglo, elemento, posicion) {
 
     let resultadoInsercionArreglo = Splice(arreglo, posicion, 0, elemento);
     let message = "Elemento " + elemento + " insertado en la posición " + posicion + " del arreglo." + "\n";
+    let i  = 0;
 
     resultadoInsercionArreglo.forEach(element => {
-        message = message + element + ", "
+        message += `[${i}] ${element} \n` 
+        i++;
     });
 
     return message;
