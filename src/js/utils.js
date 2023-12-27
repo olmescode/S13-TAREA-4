@@ -293,7 +293,7 @@ function ParseInt(numero, base) {
             throw new Error('Número no válido para la base especificada.');
         }
 
-        resultado += valorCaracter * Math.pow(Bases.BINARIO, i);
+        resultado += parseInt(valorCaracter * Math.pow(Bases.BINARIO, i));
     }
 
     return ConvertBase(resultado, base);
