@@ -4,19 +4,22 @@ import { ConvertBase, ParseInt } from '../utils.js';
 class BaseConverter {
     // Function to convert base 10 to base 2
     static base10ABase2(numero) {
-        let numeroBase2 = ConvertBase(numero, Bases.BINARIO);
+        const numeroConvertido = parseFloat(numero);
+        let numeroBase2 = ConvertBase(numeroConvertido, Bases.BINARIO);
         return "Número " + numero + " en base 2: " + numeroBase2
     }
 
     // Function to convert base 10 to base 8
     static base10ABase8(numero) {
-        let numeroBase8 = ConvertBase(numero, Bases.OCTAL);
+        const numeroConvertido = parseFloat(numero);
+        let numeroBase8 = ConvertBase(numeroConvertido, Bases.OCTAL);
         return "Número " + numero + " en base 8: " + numeroBase8
     }
 
     // Function to convert base 10 to base 16
     static base10ABase16(numero) {
-        let numeroBase16 = ConvertBase(numero, Bases.HEXADECIMAL);
+        const numeroConvertido = parseFloat(numero);
+        let numeroBase16 = ConvertBase(numeroConvertido, Bases.HEXADECIMAL);
         return "Número " + numero + " en base 16: " + numeroBase16
     }
 
